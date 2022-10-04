@@ -1,0 +1,17 @@
+{
+    "name": "Factorie",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6c4da6daa95a82042a77d75abb293934",
+        "GUID:dfeb451bdd516bb41988d2f85e681fa9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
