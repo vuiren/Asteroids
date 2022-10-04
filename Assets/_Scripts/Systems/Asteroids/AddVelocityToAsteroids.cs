@@ -18,7 +18,7 @@ namespace _Scripts.Systems
             {
                 if (Mathf.Approximately(asteroid.Velocity.magnitude, 0))
                 {
-                    asteroid.Velocity = new Vector2(Random.Range(-5f, 5f), Random.Range(-5f, 5f));
+                    asteroid.Velocity = new Vector2(Random.Range(-3f, 3f), Random.Range(-3f, 3f));
                 }
             }
         }

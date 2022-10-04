@@ -4,6 +4,7 @@ using _Scripts.Data;
 using _Scripts.Factories;
 using _Scripts.MonoLinks;
 using _Scripts.MonoLinks.Objects.UI;
+using _Scripts.Services;
 using _Scripts.Systems;
 using _Scripts.Systems.Score;
 using _Scripts.Systems.UFO;
@@ -17,6 +18,7 @@ namespace _Scripts
     public class StartUp : MonoBehaviour
     {
         [SerializeField] private Configuration configuration;
+        [SerializeField] private InputService inputService;
         [SerializeField] private GameEntitiesBag gameEntitiesBag;
 
         private readonly List<IStartSystem> _startSystems = new();
@@ -41,16 +43,16 @@ namespace _Scripts
             _runSystems.Add(new UFOFollowPlayer(gameEntitiesBag));
             
             _runSystems.Add(new AddVelocityToAsteroids(gameEntitiesBag));
-            _runSystems.Add(new AddVelocityToPlayer(gameEntitiesBag));
+            _runSystems.Add(new AddVelocityToPlayer(gameEntitiesBag, inputService));
             _runSystems.Add(new DecreasePlayerVelocity(gameEntitiesBag));
             _runSystems.Add(new ClampFlyingEntitiesVelocity(configuration, gameEntitiesBag));
             _runSystems.Add(new MoveFlyingEntities(gameEntitiesBag));
 
-            _runSystems.Add(new RotatePlayer(gameEntitiesBag));
+            _runSystems.Add(new RotatePlayer(gameEntitiesBag, inputService));
 
             _runSystems.Add(new SwitchWeapons(gameEntitiesBag));
-            _runSystems.Add(new BulletWeaponShoot(flyingEntitiesFactory, gameEntitiesBag));
-            _runSystems.Add(new LaserShoot(gameEntitiesBag, flyingEntitiesFactory));
+            _runSystems.Add(new BulletWeaponShoot(flyingEntitiesFactory, gameEntitiesBag, inputService));
+            _runSystems.Add(new LaserShoot(gameEntitiesBag, flyingEntitiesFactory, inputService));
             _runSystems.Add(new ReloadLaserWeapon(gameEntitiesBag));
             _runSystems.Add(new Reload(gameEntitiesBag));
 

@@ -2,7 +2,7 @@
 
 namespace _Scripts.MonoLinks.Objects
 {
-    public class AsteroidsSpawner: GameEntity
+    public class AsteroidsSpawner : GameEntity
     {
         public bool active = true;
         public GameObject asteroidPrefab;

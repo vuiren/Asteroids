@@ -1,6 +1,6 @@
 ﻿namespace _Scripts.MonoLinks
 {
-    public class Laser: Projectile
+    public class Laser : Projectile
     {
     }
 }

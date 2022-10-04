@@ -1,6 +1,6 @@
-﻿using _Scripts.Data;
-using _Scripts.Extensions;
+﻿using _Scripts.Extensions;
 using _Scripts.MonoLinks;
+using _Scripts.Services;
 using UnityEngine;
 
 namespace _Scripts.Systems
@@ -8,15 +8,17 @@ namespace _Scripts.Systems
     public class AddVelocityToPlayer : IRunSystem
     {
         private readonly GameEntitiesBag _gameEntitiesBag;
-
-        public AddVelocityToPlayer(GameEntitiesBag gameEntitiesBag)
+        private readonly InputService _inputService;
+        
+        public AddVelocityToPlayer(GameEntitiesBag gameEntitiesBag, InputService inputService)
         {
             _gameEntitiesBag = gameEntitiesBag;
+            _inputService = inputService;
         }
 
         public void Run()
         {
-            if (!Input.GetKey(KeyCode.Space)) return;
+            if (!_inputService.FlyButtonPressed) return;
 
             foreach (var player in _gameEntitiesBag.players)
             {

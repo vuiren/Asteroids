@@ -1,5 +1,6 @@
 ﻿using _Scripts.Factories;
 using _Scripts.MonoLinks;
+using _Scripts.Services;
 using UnityEngine;
 
 namespace _Scripts.Systems.Weapon.Laser
@@ -8,16 +9,18 @@ namespace _Scripts.Systems.Weapon.Laser
     {
         private readonly FlyingEntitiesFactory _flyingEntitiesFactory;
         private readonly GameEntitiesBag _gameEntitiesBag;
+        private readonly InputService _inputService;
 
-        public LaserShoot(GameEntitiesBag gameEntitiesBag, FlyingEntitiesFactory flyingEntitiesFactory)
+        public LaserShoot(GameEntitiesBag gameEntitiesBag, FlyingEntitiesFactory flyingEntitiesFactory, InputService inputService)
         {
             _flyingEntitiesFactory = flyingEntitiesFactory;
             _gameEntitiesBag = gameEntitiesBag;
+            _inputService = inputService;
         }
         
         public void Run()
         {
-            if(!Input.GetMouseButton(0)) return;
+            if (!_inputService.FireLaserButtonPressed) return;
 
             foreach (var laserWeapon in _gameEntitiesBag.laserWeapons)
             {

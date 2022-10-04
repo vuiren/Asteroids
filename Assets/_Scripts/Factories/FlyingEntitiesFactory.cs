@@ -14,14 +14,11 @@ namespace _Scripts.Factories
 
         public void Create(GameObject prefab, Transform spawnPoint)
         {
-            var instance = GameObject.Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
+            var instance = Object.Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
             var flyingEntity = instance.GetComponent<FlyingEntity>();
             flyingEntity.Velocity = flyingEntity.transform.TransformVector(flyingEntity.Velocity);
             var gameEntities = instance.GetComponentsInChildren<GameEntity>();
-            foreach (var gameEntity in gameEntities)
-            {
-                _gameEntitiesBag.gameEntities.Add(gameEntity);
-            }
+            foreach (var gameEntity in gameEntities) _gameEntitiesBag.gameEntities.Add(gameEntity);
             _gameEntitiesBag.UpdateEntitiesList();
         }
     }

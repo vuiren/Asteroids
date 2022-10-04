@@ -336,11 +336,11 @@ MonoBehaviour:
   Destroyed: 0
   Velocity: {x: 0, y: 0}
   moveSpeed: 5
-  rotationSpeed: 100
+  rotationSpeed: 200
   BulletWeapon: {fileID: 2994163883743545084}
   LaserWeapon: {fileID: 6344368759130689178}
   bulletWeaponEnabled: 1
-  laserWeaponEnabled: 0
+  laserWeaponEnabled: 1
 --- !u!50 &5999562435661389681
 Rigidbody2D:
   serializedVersion: 4
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MarkedForDestroying: 0
   Destroyed: 0
-  Active: 0
+  Active: 1
   DelayBetweenShots: 0.5
   RemainingDelayBetweenShots: 0
   ProjectileSpawnPoint: {fileID: 6892063935560437011}

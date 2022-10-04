@@ -51,6 +51,7 @@ MonoBehaviour:
   MarkedForDestroying: 0
   Destroyed: 0
   Velocity: {x: 0, y: 0}
+  moveSpeed: 3
 --- !u!50 &3377488495219248986
 Rigidbody2D:
   serializedVersion: 4

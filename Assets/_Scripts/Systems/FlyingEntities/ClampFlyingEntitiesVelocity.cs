@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using _Scripts.Data;
 using _Scripts.MonoLinks;
 
@@ -18,10 +17,9 @@ namespace _Scripts.Systems
 
         public void Run()
         {
-            foreach (var flyingEntity in _gameEntitiesBag.flyingEntities.Where(flyingEntity => flyingEntity.Velocity.magnitude > _configuration.MaxVelocity))
-            {
+            foreach (var flyingEntity in _gameEntitiesBag.flyingEntities.Where(flyingEntity =>
+                         flyingEntity.Velocity.magnitude > _configuration.MaxVelocity))
                 flyingEntity.Velocity = flyingEntity.Velocity.normalized * _configuration.MaxVelocity;
-            }
         }
     }
 }

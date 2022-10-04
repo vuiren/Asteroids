@@ -1,5 +1,4 @@
-﻿using System;
-using _Scripts.MonoLinks.Objects.Weapons;
+﻿using _Scripts.MonoLinks.Objects.Weapons;
 using UnityEngine;
 
 namespace _Scripts.MonoLinks
