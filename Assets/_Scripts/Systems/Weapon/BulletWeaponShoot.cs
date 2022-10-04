@@ -1,7 +1,6 @@
 ﻿using _Scripts.Factories;
 using _Scripts.MonoLinks;
 using _Scripts.Services;
-using UnityEngine;
 
 namespace _Scripts.Systems.Weapon
 {

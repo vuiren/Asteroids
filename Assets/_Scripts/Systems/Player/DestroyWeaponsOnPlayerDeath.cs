@@ -2,7 +2,7 @@
 
 namespace _Scripts.Systems
 {
-    public class DestroyWeaponsOnPlayerDeath: IRunSystem
+    public class DestroyWeaponsOnPlayerDeath : IRunSystem
     {
         private readonly GameEntitiesBag _gameEntitiesBag;
 
@@ -17,12 +17,8 @@ namespace _Scripts.Systems
             foreach (var player in _gameEntitiesBag.players)
             {
                 if (!player.MarkedForDestroying) continue;
-                foreach (var weapon in _gameEntitiesBag.weapons)
-                {
-                    weapon.MarkedForDestroying = true;
-                }
+                foreach (var weapon in _gameEntitiesBag.weapons) weapon.MarkedForDestroying = true;
             }
-
         }
     }
 }

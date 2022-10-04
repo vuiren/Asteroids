@@ -1,16 +1,16 @@
 {
-    "name": "Data",
-    "rootNamespace": "",
-    "references": [
-        "GUID:6c4da6daa95a82042a77d75abb293934"
-    ],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+  "name": "Data",
+  "rootNamespace": "",
+  "references": [
+    "GUID:6c4da6daa95a82042a77d75abb293934"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
 }

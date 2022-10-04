@@ -14,9 +14,7 @@ namespace _Scripts.Systems
         public void Run()
         {
             foreach (var flyingEntity in _gameEntitiesBag.flyingEntities)
-            {
                 flyingEntity.Velocity = flyingEntity.transform.InverseTransformVector(flyingEntity.Velocity);
-            }
         }
     }
 }

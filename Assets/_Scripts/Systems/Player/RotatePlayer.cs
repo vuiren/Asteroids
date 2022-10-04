@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _Scripts.Systems
 {
-    public class RotatePlayer: IRunSystem
+    public class RotatePlayer : IRunSystem
     {
         private readonly GameEntitiesBag _gameEntitiesBag;
         private readonly InputService _inputService;
@@ -14,14 +14,12 @@ namespace _Scripts.Systems
             _gameEntitiesBag = gameEntitiesBag;
             _inputService = inputService;
         }
-        
+
         public void Run()
         {
             var horizontal = -_inputService.RotateValue.x;
             foreach (var player in _gameEntitiesBag.players)
-            {
-                player.transform.Rotate(0,0,horizontal * player.rotationSpeed * Time.deltaTime);
-            }
+                player.transform.Rotate(0, 0, horizontal * player.rotationSpeed * Time.deltaTime);
         }
     }
 }

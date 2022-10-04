@@ -2,7 +2,7 @@
 
 namespace _Scripts.Systems.UFO
 {
-    public class UFOFollowPlayer: IRunSystem
+    public class UFOFollowPlayer : IRunSystem
     {
         private readonly GameEntitiesBag _gameEntitiesBag;
 
@@ -14,7 +14,7 @@ namespace _Scripts.Systems.UFO
 
         public void Run()
         {
-            if(_gameEntitiesBag.players.Length == 0) return;
+            if (_gameEntitiesBag.players.Length == 0) return;
             var player = _gameEntitiesBag.players[0];
 
             foreach (var ufo in _gameEntitiesBag.ufos)

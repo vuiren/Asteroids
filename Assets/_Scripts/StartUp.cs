@@ -20,9 +20,9 @@ namespace _Scripts
         [SerializeField] private Configuration configuration;
         [SerializeField] private InputService inputService;
         [SerializeField] private GameEntitiesBag gameEntitiesBag;
+        private readonly List<IRunSystem> _runSystems = new();
 
         private readonly List<IStartSystem> _startSystems = new();
-        private readonly List<IRunSystem> _runSystems = new();
 
         // Start is called before the first frame update
         private void Start()
@@ -34,14 +34,14 @@ namespace _Scripts
             gameEntitiesBag.UpdateEntitiesList();
 
             var flyingEntitiesFactory = new FlyingEntitiesFactory(gameEntitiesBag);
-            
+
             _startSystems.Add(new RestartGameButtonHandler(gameEntitiesBag));
 
             _runSystems.Add(new ReduceTimeForAsteroidsSpawner(gameEntitiesBag));
             _runSystems.Add(new SpawnAsteroids(configuration, flyingEntitiesFactory, gameEntitiesBag));
 
             _runSystems.Add(new UFOFollowPlayer(gameEntitiesBag));
-            
+
             _runSystems.Add(new AddVelocityToAsteroids(gameEntitiesBag));
             _runSystems.Add(new AddVelocityToPlayer(gameEntitiesBag, inputService));
             _runSystems.Add(new DecreasePlayerVelocity(gameEntitiesBag));
@@ -58,31 +58,25 @@ namespace _Scripts
 
             _runSystems.Add(new DestroyProjectilesOffScreen(camera, gameEntitiesBag));
             _runSystems.Add(new KeepFlyingEntitiesOnScreen(camera, gameEntitiesBag));
-            
+
             _runSystems.Add(new CountScore(gameEntitiesBag));
             _runSystems.Add(new ShowGameOverScreen(gameEntitiesBag));
-            
+
             _runSystems.Add(new DestroyWeaponsOnPlayerDeath(gameEntitiesBag));
             _runSystems.Add(new SpawnAsteroidShardsOnDestroying(flyingEntitiesFactory, gameEntitiesBag));
             _runSystems.Add(new DestroyGameEntities(gameEntitiesBag));
-            
+
             _runSystems.Add(new SyncUI(gameEntitiesBag, camera));
             _runSystems.Add(new RestartGame(configuration, gameEntitiesBag, flyingEntitiesFactory));
 
 
-            foreach (var startSystem in _startSystems)
-            {
-                startSystem.Start();
-            }
+            foreach (var startSystem in _startSystems) startSystem.Start();
         }
 
         // Update is called once per frame
         private void Update()
         {
-            foreach (var runSystem in _runSystems)
-            {
-                runSystem.Run();
-            }
+            foreach (var runSystem in _runSystems) runSystem.Run();
         }
     }
 }

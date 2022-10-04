@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _Scripts.Systems
 {
-    public class AddVelocityToAsteroids: IRunSystem
+    public class AddVelocityToAsteroids : IRunSystem
     {
         private readonly GameEntitiesBag _gameEntitiesBag;
 
@@ -11,16 +11,12 @@ namespace _Scripts.Systems
         {
             _gameEntitiesBag = gameEntitiesBag;
         }
-        
+
         public void Run()
         {
             foreach (var asteroid in _gameEntitiesBag.asteroids)
-            {
                 if (Mathf.Approximately(asteroid.Velocity.magnitude, 0))
-                {
                     asteroid.Velocity = new Vector2(Random.Range(-3f, 3f), Random.Range(-3f, 3f));
-                }
-            }
         }
     }
 }

@@ -9,7 +9,7 @@ namespace _Scripts.Systems
     {
         private readonly GameEntitiesBag _gameEntitiesBag;
         private readonly InputService _inputService;
-        
+
         public AddVelocityToPlayer(GameEntitiesBag gameEntitiesBag, InputService inputService)
         {
             _gameEntitiesBag = gameEntitiesBag;
@@ -21,9 +21,7 @@ namespace _Scripts.Systems
             if (!_inputService.FlyButtonPressed) return;
 
             foreach (var player in _gameEntitiesBag.players)
-            {
                 player.Velocity += player.transform.up.Vector2() * (Time.deltaTime * player.moveSpeed);
-            }
         }
     }
 }

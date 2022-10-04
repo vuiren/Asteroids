@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using _Scripts.Extensions;
+﻿using _Scripts.Extensions;
 using _Scripts.MonoLinks;
 using UnityEngine;
 
