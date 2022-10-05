@@ -530,7 +530,6 @@ GameObject:
   m_Component:
   - component: {fileID: 538375397}
   - component: {fileID: 538375396}
-  - component: {fileID: 538375395}
   m_Layer: 0
   m_Name: Player Input Service
   m_TagString: Untagged
@@ -538,22 +537,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &538375395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 538375394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67566e0dc6e14b44b5fd6b2a305382cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FireButtonPressed: 0
-  FlyButtonPressed: 0
-  FireLaserButtonPressed: 0
-  RotateValue: {x: 0, y: 0}
 --- !u!114 &538375396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,7 +564,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 538375395}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: _Scripts.Services.InputService, Assembly-CSharp
         m_MethodName: FireButtonHandle
         m_Mode: 0
@@ -597,7 +580,7 @@ MonoBehaviour:
     m_ActionName: Player/Fire[/XInputControllerWindows/rightShoulder,/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 538375395}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: _Scripts.Services.InputService, Assembly-CSharp
         m_MethodName: FlyButtonHandle
         m_Mode: 0
@@ -613,7 +596,7 @@ MonoBehaviour:
     m_ActionName: Player/FlyUp[/Keyboard/upArrow,/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 538375395}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: _Scripts.Services.InputService, Assembly-CSharp
         m_MethodName: RotateHandle
         m_Mode: 0
@@ -681,7 +664,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 538375395}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: _Scripts.Services.InputService, Services
         m_MethodName: FireLaserButtonHandle
         m_Mode: 0
@@ -697,7 +680,7 @@ MonoBehaviour:
     m_ActionName: Player/FireLaser[/XInputControllerWindows/leftTrigger,/Keyboard/shift]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 538375395}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: _Scripts.Services.InputService, Services
         m_MethodName: RotateRightHandle
         m_Mode: 0
@@ -713,7 +696,7 @@ MonoBehaviour:
     m_ActionName: Player/RotateRight[/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 538375395}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: _Scripts.Services.InputService, Services
         m_MethodName: RotateLeftHandle
         m_Mode: 0
@@ -1819,7 +1802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   configuration: {fileID: 11400000, guid: 737051678c44b114a872e758a68d56ff, type: 2}
-  inputService: {fileID: 538375395}
+  playerInput: {fileID: 538375396}
   gameEntitiesBag:
     gameEntities: []
     asteroids: []
@@ -1838,6 +1821,7 @@ MonoBehaviour:
     gameOverScreens: []
     restartGames: []
     playerSpawnPoints: []
+  _camera: {fileID: 519420031}
 --- !u!4 &1491188516
 Transform:
   m_ObjectHideFlags: 0
