@@ -26,9 +26,9 @@ namespace _Scripts.Systems.Weapon
                 var startScreenPos = _camera.ScreenToWorldPoint(new Vector3(0, 0, 0));
                 var endScreenPos = _camera.ScreenToWorldPoint(new Vector3(screenWidth, screenHeight, 0));
 
-                if (position.x > endScreenPos.x || position.x < startScreenPos.x) projectile.MarkedForDestroying = true;
+                if (position.x > endScreenPos.x || position.x < startScreenPos.x) projectile.markedForDestroying = true;
 
-                if (position.y > endScreenPos.y || position.y < startScreenPos.y) projectile.MarkedForDestroying = true;
+                if (position.y > endScreenPos.y || position.y < startScreenPos.y) projectile.markedForDestroying = true;
             }
         }
     }

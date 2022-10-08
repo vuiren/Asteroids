@@ -17,10 +17,10 @@ namespace _Scripts.Systems
         {
             var listChanged = false;
             foreach (var gameEntity in
-                     _gameEntitiesBag.gameEntities.Where(gameEntity => gameEntity.MarkedForDestroying))
+                     _gameEntitiesBag.gameEntities.Where(gameEntity => gameEntity.markedForDestroying))
             {
                 Object.Destroy(gameEntity.gameObject);
-                gameEntity.Destroyed = true;
+                gameEntity.destroyed = true;
                 listChanged = true;
             }
 

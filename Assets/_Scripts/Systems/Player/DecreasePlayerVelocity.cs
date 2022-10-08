@@ -16,9 +16,9 @@ namespace _Scripts.Systems
         {
             foreach (var player in _gameEntitiesBag.players)
             {
-                var magnitude = player.Velocity.magnitude;
+                var magnitude = player.velocity.magnitude;
                 magnitude -= Time.deltaTime;
-                player.Velocity = player.Velocity.normalized * magnitude;
+                player.velocity = player.velocity.normalized * magnitude;
             }
         }
     }

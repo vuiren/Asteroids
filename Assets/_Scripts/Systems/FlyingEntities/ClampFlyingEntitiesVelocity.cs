@@ -18,8 +18,8 @@ namespace _Scripts.Systems
         public void Run()
         {
             foreach (var flyingEntity in _gameEntitiesBag.flyingEntities.Where(flyingEntity =>
-                         flyingEntity.Velocity.magnitude > _configuration.MaxVelocity))
-                flyingEntity.Velocity = flyingEntity.Velocity.normalized * _configuration.MaxVelocity;
+                         flyingEntity.velocity.magnitude > _configuration.maxFlyingEntitiesVelocity))
+                flyingEntity.velocity = flyingEntity.velocity.normalized * _configuration.maxFlyingEntitiesVelocity;
         }
     }
 }

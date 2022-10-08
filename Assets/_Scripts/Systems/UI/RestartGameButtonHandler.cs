@@ -26,7 +26,7 @@ namespace _Scripts.Systems.UI
 
             restartGame.gameRestarting = true;
 
-            foreach (var flyingEntity in _gameEntitiesBag.flyingEntities) flyingEntity.MarkedForDestroying = true;
+            foreach (var flyingEntity in _gameEntitiesBag.flyingEntities) flyingEntity.markedForDestroying = true;
 
             foreach (var asteroidsSpawner in _gameEntitiesBag.asteroidsSpawners) asteroidsSpawner.active = false;
         }

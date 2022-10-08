@@ -133,7 +133,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6772795140860960234}
-  - component: {fileID: 6772795140860960235}
   m_Layer: 0
   m_Name: Asteroids Spawner
   m_TagString: Untagged
@@ -162,29 +161,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6772795140860960235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6772795140860960232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64bb7b8da8f84ff183d61bc8b9759577, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MarkedForDestroying: 0
-  Destroyed: 0
-  asteroidPrefab: {fileID: 1831384854516372343, guid: 52e1246293723c74688d415dab49d2b7, type: 3}
-  possibleSpawnPoints:
-  - {fileID: 6772795140920264126}
-  - {fileID: 6772795140439863817}
-  - {fileID: 6772795140686260490}
-  - {fileID: 6772795140427749442}
-  - {fileID: 6772795140705799477}
-  - {fileID: 6772795140886165146}
-  RemainingDelayBeforeAsteroidSpawn: 0
 --- !u!1 &6772795140886165147
 GameObject:
   m_ObjectHideFlags: 0

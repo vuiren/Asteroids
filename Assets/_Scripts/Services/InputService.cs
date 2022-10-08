@@ -6,10 +6,13 @@ namespace _Scripts.Services
 {
     public class InputService
     {
+        public bool FireButtonPressed, FlyButtonPressed, FireLaserButtonPressed;
+        public Vector2 RotateValue;
+
         public InputService(PlayerInput playerInput)
         {
-            foreach (var inputActionEvent in playerInput.actionEvents.Where(inputActionEvent => inputActionEvent.actionName.Contains("Player")))
-            {
+            foreach (var inputActionEvent in playerInput.actionEvents.Where(inputActionEvent =>
+                         inputActionEvent.actionName.Contains("Player")))
                 switch (inputActionEvent.actionName)
                 {
                     case "Player/Fire[/XInputControllerWindows/rightShoulder,/Keyboard/space]":
@@ -31,11 +34,7 @@ namespace _Scripts.Services
                         inputActionEvent.AddListener(RotateLeftHandle);
                         break;
                 }
-            }
         }
-
-        public bool FireButtonPressed, FlyButtonPressed, FireLaserButtonPressed;
-        public Vector2 RotateValue;
 
         private void FireButtonHandle(InputAction.CallbackContext context)
         {

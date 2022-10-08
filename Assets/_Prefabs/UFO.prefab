@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2216042735974592433}
-  - component: {fileID: 2216042735974592432}
   - component: {fileID: 3377488495219248986}
   - component: {fileID: 7783706249848535341}
+  - component: {fileID: 3785242766401273786}
   m_Layer: 8
   m_Name: UFO
   m_TagString: Untagged
@@ -36,22 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2216042735974592432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2216042735974592434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bddf817f4ea4e8198eeaefc83f6c25f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MarkedForDestroying: 0
-  Destroyed: 0
-  Velocity: {x: 0, y: 0}
-  moveSpeed: 3
 --- !u!50 &3377488495219248986
 Rigidbody2D:
   serializedVersion: 4
@@ -89,6 +73,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.45
+--- !u!114 &3785242766401273786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2216042735974592434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8447436f632541fb91510a6a809a3ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2376308104719987548
 GameObject:
   m_ObjectHideFlags: 0

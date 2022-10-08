@@ -20,7 +20,7 @@ namespace _Scripts.Systems.UFO
             foreach (var ufo in _gameEntitiesBag.ufos)
             {
                 var direction = player.transform.position - ufo.transform.position;
-                ufo.Velocity = direction.normalized * ufo.moveSpeed;
+                ufo.velocity = direction.normalized * ufo.moveSpeed;
             }
         }
     }

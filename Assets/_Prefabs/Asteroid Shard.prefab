@@ -93,9 +93,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2473775040158423928}
-  - component: {fileID: 3620440536786899956}
   - component: {fileID: 3998549700579491581}
   - component: {fileID: 7504969158816308416}
+  - component: {fileID: 1751663676688341462}
   m_Layer: 8
   m_Name: Asteroid Shard
   m_TagString: Untagged
@@ -119,21 +119,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3620440536786899956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2473775040158423927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 473d554309fa4c26bbf6ffb5c95bc075, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MarkedForDestroying: 0
-  Destroyed: 0
-  Velocity: {x: 1, y: 1}
 --- !u!50 &3998549700579491581
 Rigidbody2D:
   serializedVersion: 4
@@ -184,3 +169,15 @@ PolygonCollider2D:
       - {x: -0.5, y: 0}
       - {x: 0, y: -0.2}
       - {x: 0.5, y: 0}
+--- !u!114 &1751663676688341462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2473775040158423927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8447436f632541fb91510a6a809a3ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

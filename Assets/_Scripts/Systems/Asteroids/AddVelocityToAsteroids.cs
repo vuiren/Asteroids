@@ -15,8 +15,8 @@ namespace _Scripts.Systems
         public void Run()
         {
             foreach (var asteroid in _gameEntitiesBag.asteroids)
-                if (Mathf.Approximately(asteroid.Velocity.magnitude, 0))
-                    asteroid.Velocity = new Vector2(Random.Range(-3f, 3f), Random.Range(-3f, 3f));
+                if (Mathf.Approximately(asteroid.velocity.magnitude, 0))
+                    asteroid.velocity = new Vector2(Random.Range(-3f, 3f), Random.Range(-3f, 3f));
         }
     }
 }

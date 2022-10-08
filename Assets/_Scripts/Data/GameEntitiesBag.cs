@@ -1,34 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using _Scripts.MonoLinks.Objects;
-using _Scripts.MonoLinks.Objects.FlyingEntities.Projectiles;
-using _Scripts.MonoLinks.Objects.UI;
-using _Scripts.MonoLinks.Objects.Weapons;
+using _Scripts.Entities;
+using _Scripts.Entities.FlyingEntities;
+using _Scripts.Entities.FlyingEntities.Projectiles;
+using _Scripts.Entities.Game;
+using _Scripts.Entities.Spawners;
+using _Scripts.Entities.UI;
+using _Scripts.Entities.Weapons;
 
 namespace _Scripts.MonoLinks
 {
     [Serializable]
     public class GameEntitiesBag
     {
-        public List<GameEntity> gameEntities;
-
-        public Asteroid[] asteroids;
-        public FlyingEntity[] flyingEntities;
+        public List<GameEntity> gameEntities = new();
         public Player[] players;
-        public Bullet[] bullets;
-        public Weapon[] weapons;
-        public AsteroidsSpawner[] asteroidsSpawners;
-        public Projectile[] projectiles;
+        public Laser[] Lasers;
         public UFO[] ufos;
         public UI[] uis;
         public LaserWeapon[] laserWeapons;
-        public BulletWeapon[] bulletWeapons;
-        public Score[] scores;
-        public AsteroidShard[] asteroidShards;
         public GameOverScreen[] gameOverScreens;
+
+        public Asteroid[] asteroids;
+        public AsteroidShard[] asteroidShards;
+        public AsteroidsSpawner[] asteroidsSpawners;
+        public Bullet[] bullets;
+        public BulletWeapon[] bulletWeapons;
+        public FlyingEntity[] flyingEntities;
+        public Projectile[] projectiles;
         public RestartGame[] restartGames;
-        public PlayerSpawnPoint[] playerSpawnPoints;
+        public Score[] scores;
+        public Spawner[] spawners;
+        public UFOsSpawner[] ufosSpawners;
+        public Weapon[] weapons;
 
         public GameEntitiesBag(List<GameEntity> gameEntities)
         {
@@ -53,19 +58,20 @@ namespace _Scripts.MonoLinks
             asteroidShards = Filter<AsteroidShard>(gameEntities);
             gameOverScreens = Filter<GameOverScreen>(gameEntities);
             restartGames = Filter<RestartGame>(gameEntities);
-            playerSpawnPoints = Filter<PlayerSpawnPoint>(gameEntities);
+            spawners = Filter<Spawner>(gameEntities);
+            ufosSpawners = Filter<UFOsSpawner>(gameEntities);
+            Lasers = Filter<Laser>(gameEntities);
         }
 
         private void RemoveDestroyedEntities()
         {
-            gameEntities = gameEntities.Where(x => !x.Destroyed).ToList();
+            gameEntities = gameEntities.Where(x => !x.destroyed).ToList();
         }
 
         private T[] Filter<T>(IEnumerable<GameEntity> gameEntities) where T : GameEntity
         {
             return gameEntities
-                .Where(x => x.GetComponent<T>())
-                .Select(x => x.GetComponent<T>())
+                .OfType<T>()
                 .ToArray();
         }
     }

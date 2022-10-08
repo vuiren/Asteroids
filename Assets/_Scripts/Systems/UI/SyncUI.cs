@@ -25,7 +25,7 @@ namespace _Scripts.Systems.UI
             {
                 ui.coordinatesText.text = "Coords: " + screenPos;
                 ui.rotationText.text = "Rotation: " + player.transform.rotation.eulerAngles.z;
-                ui.currentSpeedText.text = "Speed: " + player.Velocity.magnitude;
+                ui.currentSpeedText.text = "Speed: " + player.velocity.magnitude;
                 ui.laserShotsCountText.text = "Laser Shots: " + laserWeapon.remainingLaserShotsCount;
                 ui.laserReloadText.text = "Laser Reload: " + laserWeapon.remainingLaserShotReloadTime;
             }

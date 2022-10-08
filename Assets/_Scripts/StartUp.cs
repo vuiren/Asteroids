@@ -10,6 +10,7 @@ namespace _Scripts
     {
         [SerializeField] private Configuration configuration;
         [SerializeField] private PlayerInput playerInput;
+        [SerializeField] private UISceneData uiSceneData;
         [SerializeField] private Camera _camera;
         [SerializeField] private GameEntitiesBag gameEntitiesBag;
         private IRunSystem[] _runSystems;
@@ -18,7 +19,8 @@ namespace _Scripts
         // Start is called before the first frame update
         private void Start()
         {
-            Setup.Init(configuration, playerInput, _camera, ref gameEntitiesBag, ref _startSystems, ref _runSystems);
+            Setup.Init(configuration, playerInput, uiSceneData, _camera, ref gameEntitiesBag, ref _startSystems,
+                ref _runSystems);
 
             foreach (var startSystem in _startSystems) startSystem.Start();
         }

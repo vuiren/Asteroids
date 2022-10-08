@@ -21,7 +21,7 @@ namespace _Scripts.Systems
             if (!_inputService.FlyButtonPressed) return;
 
             foreach (var player in _gameEntitiesBag.players)
-                player.Velocity += player.transform.up.Vector2() * (Time.deltaTime * player.moveSpeed);
+                player.velocity += player.transform.up.Vector2() * (Time.deltaTime * player.moveSpeed);
         }
     }
 }

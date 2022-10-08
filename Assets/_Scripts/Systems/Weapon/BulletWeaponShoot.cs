@@ -1,36 +1,39 @@
-﻿using _Scripts.Factories;
+﻿using _Scripts.Data;
+using _Scripts.Entities.FlyingEntities.Projectiles;
+using _Scripts.Entities.Weapons;
+using _Scripts.Extensions;
+using _Scripts.Factories;
 using _Scripts.MonoLinks;
 using _Scripts.Services;
+using UnityEngine;
 
 namespace _Scripts.Systems.Weapon
 {
-    public class BulletWeaponShoot : IRunSystem
+    public class BulletWeaponShoot : ShootSystem<BulletWeapon>
     {
-        private readonly FlyingEntitiesFactory _flyingEntitiesFactory;
-        private readonly GameEntitiesBag _gameEntitiesBag;
-        private readonly InputService _inputService;
-
-        public BulletWeaponShoot(FlyingEntitiesFactory flyingEntitiesFactory, GameEntitiesBag gameEntitiesBag,
-            InputService inputService)
+        public BulletWeaponShoot(Configuration configuration, FlyingEntitiesFactory flyingEntitiesFactory,
+            GameEntitiesBag gameEntitiesBag, InputService inputService) : base(configuration, flyingEntitiesFactory,
+            gameEntitiesBag, inputService)
         {
-            _flyingEntitiesFactory = flyingEntitiesFactory;
-            _gameEntitiesBag = gameEntitiesBag;
-            _inputService = inputService;
         }
 
-        public void Run()
+        protected override bool InputCheck()
         {
-            if (!_inputService.FireButtonPressed) return;
+            return InputService.FireButtonPressed;
+        }
 
-            foreach (var weapon in _gameEntitiesBag.bulletWeapons)
+        protected override void Shoot(BulletWeapon weapon, Transform playerTransform)
+        {
+            var bullet = new Bullet
             {
-                if (!weapon.Active) continue;
+                velocity = playerTransform.up * Configuration.bulletWeaponData.projectileSpeed
+            };
+            var spawnPosition = playerTransform.position +
+                                playerTransform.TransformVector(weapon.projectileOffsetFromPlayer.Vector3());
 
-                if (!(weapon.RemainingDelayBetweenShots <= 0)) continue;
-
-                _flyingEntitiesFactory.Create(weapon.Projectile, weapon.ProjectileSpawnPoint);
-                weapon.RemainingDelayBetweenShots = weapon.DelayBetweenShots;
-            }
+            FlyingEntitiesFactory.Create(bullet, weapon.Projectile, spawnPosition,
+                Quaternion.Euler(playerTransform.up));
+            weapon.RemainingDelayBetweenShots = weapon.DelayBetweenShots;
         }
     }
 }

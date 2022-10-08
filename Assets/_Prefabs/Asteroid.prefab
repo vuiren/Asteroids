@@ -124,8 +124,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1831384854516372341}
-  - component: {fileID: 1831384854516372342}
   - component: {fileID: 6864561901262546286}
+  - component: {fileID: 4741932712343381665}
   m_Layer: 8
   m_Name: Asteroid
   m_TagString: Untagged
@@ -152,26 +152,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1831384854516372342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1831384854516372343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea8ae0c4bba147ecb1d5e663c4891f7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MarkedForDestroying: 0
-  Destroyed: 0
-  Velocity: {x: 0, y: 0}
-  shardPrefab: {fileID: 2473775040158423927, guid: 5545fe697d9d36145a849a9bdc05ad1d, type: 3}
-  asteroidShardSpawnPoints:
-  - {fileID: 518061281221079002}
-  - {fileID: 5379579080710391676}
-  - {fileID: 8966159887609581752}
 --- !u!61 &6864561901262546286
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -198,6 +178,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4741932712343381665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831384854516372343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8447436f632541fb91510a6a809a3ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3235967821861479781
 GameObject:
   m_ObjectHideFlags: 0

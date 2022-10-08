@@ -16,8 +16,8 @@ namespace _Scripts.Systems
         {
             foreach (var player in _gameEntitiesBag.players)
             {
-                if (!player.MarkedForDestroying) continue;
-                foreach (var weapon in _gameEntitiesBag.weapons) weapon.MarkedForDestroying = true;
+                if (!player.markedForDestroying) continue;
+                foreach (var weapon in _gameEntitiesBag.weapons) weapon.markedForDestroying = true;
             }
         }
     }

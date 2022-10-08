@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6892063935127529645}
-  - component: {fileID: 2994163883743545084}
   m_Layer: 6
   m_Name: Bullet Weapon
   m_TagString: Untagged
@@ -33,25 +32,6 @@ Transform:
   m_Father: {fileID: 6892063936433104311}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2994163883743545084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6892063935127529646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f75d14f08bc64d61b32a65870c6f7346, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MarkedForDestroying: 0
-  Destroyed: 0
-  Active: 1
-  DelayBetweenShots: 0.1
-  RemainingDelayBetweenShots: 0
-  ProjectileSpawnPoint: {fileID: 6892063935215080740}
-  Projectile: {fileID: 5330812223849605440, guid: fa96865fb1023e94fbf465c3f759231f, type: 3}
 --- !u!1 &6892063935201270401
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,9 +272,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6892063936433104311}
-  - component: {fileID: 6892063936433104310}
   - component: {fileID: 5999562435661389681}
   - component: {fileID: 4336158848432008981}
+  - component: {fileID: 2679182253887281129}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -320,27 +300,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6892063936433104310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6892063936433104313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b4809d2d13d4dfab6683fbb0e7f5446, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MarkedForDestroying: 0
-  Destroyed: 0
-  Velocity: {x: 0, y: 0}
-  moveSpeed: 5
-  rotationSpeed: 200
-  BulletWeapon: {fileID: 2994163883743545084}
-  LaserWeapon: {fileID: 6344368759130689178}
-  bulletWeaponEnabled: 1
-  laserWeaponEnabled: 1
 --- !u!50 &5999562435661389681
 Rigidbody2D:
   serializedVersion: 4
@@ -378,6 +337,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.20375896
+--- !u!114 &2679182253887281129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6892063936433104313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8447436f632541fb91510a6a809a3ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6892063936446851965
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +358,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6892063936446851964}
-  - component: {fileID: 6344368759130689178}
   m_Layer: 6
   m_Name: Laser Weapon
   m_TagString: Untagged
@@ -411,26 +381,3 @@ Transform:
   m_Father: {fileID: 6892063936433104311}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6344368759130689178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6892063936446851965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd36400aeb2545a1af86d66d7af71c07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MarkedForDestroying: 0
-  Destroyed: 0
-  Active: 1
-  DelayBetweenShots: 0.5
-  RemainingDelayBetweenShots: 0
-  ProjectileSpawnPoint: {fileID: 6892063935560437011}
-  Projectile: {fileID: 5330812223849605440, guid: 26b5939fa306bb740901facffb3c6432, type: 3}
-  laserShotsCount: 3
-  remainingLaserShotsCount: 0
-  laserShotReloadTime: 1
-  remainingLaserShotReloadTime: 0

@@ -18,7 +18,7 @@ namespace _Scripts.Systems
             foreach (var flyingEntity in _gameEntitiesBag.flyingEntities)
             {
                 var position = flyingEntity.transform.position.Vector2();
-                var velocity = flyingEntity.Velocity;
+                var velocity = flyingEntity.velocity;
                 flyingEntity.transform.position = position + velocity * Time.deltaTime;
             }
         }
